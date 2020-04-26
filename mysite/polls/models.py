@@ -26,3 +26,14 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+class RequestForecast(models.Model):
+    REGIONS = (('N', 'North'),
+               ('E', 'East'),
+               ('S', 'South'),
+               ('W', 'West'))
+
+    region = models.CharField(max_length=1, choices=REGIONS)
+    forecast_time = models.IntegerField()
+
+
